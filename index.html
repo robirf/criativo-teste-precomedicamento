@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criativos — PRECOMEDICAMENTO03</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: #666;
+            font-size: 1.1em;
+        }
+        
+        .status-info {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+        
+        .status-info strong {
+            color: #856404;
+        }
+        
+        .creatives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .creative-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .creative-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+        
+        .creative-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            font-weight: 600;
+        }
+        
+        .creative-header.variant-b {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        .creative-header.variant-c {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        
+        .creative-mock {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .creative-image {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        
+        .creative-copy {
+            padding: 15px;
+        }
+        
+        .headline {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        
+        .body-text {
+            font-size: 0.95em;
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+        
+        .cta-text {
+            font-size: 0.9em;
+            color: #667eea;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+        
+        .metrics {
+            background: #f8f9fa;
+            padding: 15px;
+            border-top: 1px solid #eee;
+        }
+        
+        .metric-label {
+            font-size: 0.8em;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+        
+        .metric-value {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .comparison {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .comparison h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        table th {
+            background: #f8f9fa;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #e9ecef;
+            color: #333;
+        }
+        
+        table td {
+            padding: 12px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .rec-label {
+            display: inline-block;
+            padding: 4px 8px;
+            background: #d4edda;
+            color: #155724;
+            border-radius: 3px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+        
+        .rec-label.variant-b {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .footer-notes {
+            background: #f0f4ff;
+            border-left: 4px solid #667eea;
+            padding: 15px 20px;
+            margin-top: 30px;
+            border-radius: 4px;
+            font-size: 0.95em;
+            color: #555;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎨 Criativos para Teste — PRECOMEDICAMENTO03</h1>
+            <p>3 variações de copy + imagem pra recuperar CTR (-24,75%)</p>
+        </div>
+        
+        <div class="status-info">
+            <strong>⚠️ Situação Atual:</strong> CTR em queda, CPM subindo, Reach caindo. Criativa saturada. Teste por 3 dias, pausar se não melhorar.
+        </div>
+        
+        <!-- CRIATIVOS -->
+        <div class="creatives-grid">
+            
+            <!-- VARIANTE A: CURRENT (referência) -->
+            <div class="creative-card">
+                <div class="creative-header">Atual (Referência)</div>
+                <div class="creative-mock">
+                    <div class="creative-image">💼</div>
+                </div>
+                <div class="creative-copy">
+                    <div class="headline">[PRECOMEDICAMENTO] Conheça Seus Direitos</div>
+                    <div class="body-text">Médicos e profissionais da saúde têm benefícios especiais. Consulta gratuita.</div>
+                    <div class="cta-text">→ Saiba mais</div>
+                </div>
+                <div class="metrics">
+                    <div class="metric-label">Performance Atual</div>
+                    <div class="metric-value">CTR -24,75% 🔴</div>
+                </div>
+            </div>
+            
+            <!-- VARIANTE B: URGÊNCIA + NÚMEROS -->
+            <div class="creative-card">
+                <div class="creative-header variant-b">Variante B: Urgência</div>
+                <div class="creative-mock">
+                    <div class="creative-image">⏰</div>
+                </div>
+                <div class="creative-copy">
+                    <div class="headline">9 em cada 10 médicos perdem $$$ em benefícios</div>
+                    <div class="body-text">Recupere até R$ 15.000 em direitos médicos. Análise grátis em 2 min.</div>
+                    <div class="cta-text">→ Conferir agora (limite: 100 vagas)</div>
+                </div>
+                <div class="metrics">
+                    <div class="metric-label">Estratégia</div>
+                    <div class="metric-value">Social Proof + Urgência</div>
+                </div>
+            </div>
+            
+            <!-- VARIANTE C: PROBLEM-SOLUTION -->
+            <div class="creative-card">
+                <div class="creative-header variant-c">Variante C: Storytelling</div>
+                <div class="creative-mock">
+                    <div class="creative-image">🎯</div>
+                </div>
+                <div class="creative-copy">
+                    <div class="headline">Médico: você paga imposto que não precisa pagar</div>
+                    <div class="body-text">Especialistas em direito médico mostram como economizar até 40% em impostos. Seu caso em 48h.</div>
+                    <div class="cta-text">→ Quero poupar impostos</div>
+                </div>
+                <div class="metrics">
+                    <div class="metric-label">Estratégia</div>
+                    <div class="metric-value">Problema Específico + Solução</div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- COMPARAÇÃO -->
+        <div class="comparison">
+            <h2>📊 Análise Comparativa</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Criativa</th>
+                        <th>Ângulo</th>
+                        <th>Por que Testar</th>
+                        <th>Público-alvo</th>
+                        <th>Recomendação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Atual</strong></td>
+                        <td>Genérica (direitos)</td>
+                        <td>Base de comparação</td>
+                        <td>Amplo</td>
+                        <td>Pausar após teste</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Variante B</strong></td>
+                        <td>Urgência + ROI</td>
+                        <td>Números acionam FOMO; urgência converte melhor</td>
+                        <td>Médicos que querem resultados</td>
+                        <td><span class="rec-label">RECOMENDADO 🟢</span> <br>CTR deve +15-25%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Variante C</strong></td>
+                        <td>Problema específico</td>
+                        <td>Mais segmentado; foco em imposto (pain point real)</td>
+                        <td>Médicos autônomos/PJ</td>
+                        <td><span class="rec-label variant-b">TESTE SECUNDÁRIO 🟡</span> <br>Pode funcionar bem</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- PLANO DE TESTE -->
+        <div class="comparison">
+            <h2>🧪 Plano de Teste Recomendado</h2>
+            <p style="margin-bottom: 20px; line-height: 1.6; color: #555;">
+                <strong>Período:</strong> 3 dias (72h) <br>
+                <strong>Orçamento:</strong> Manter R$ 245,81 (gasto atual) <br>
+                <strong>Split:</strong> 50% Variante B | 25% Variante C | 25% Atual (controle)
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Dia</th>
+                        <th>Métrica Principal</th>
+                        <th>Gatilho para Pausa</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Dia 1</strong></td>
+                        <td>Volume de clicks</td>
+                        <td>CTR não sobe de -10% vs controle</td>
+                        <td>Acompanhar; ajustar bid se needed</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Dia 2-3</strong></td>
+                        <td>CTR + CVR + CPCL</td>
+                        <td>Variante B CTR < -5% vs Atual</td>
+                        <td>Se ruim: pausar; se bom: manter</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Decisão (Dia 4)</strong></td>
+                        <td>Comparação final</td>
+                        <td>—</td>
+                        <td>🎯 Manter vencedor; pausar perdedores</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="footer-notes">
+            <strong>ℹ️ Próximos Passos:</strong><br>
+            1️⃣ <strong>Criar as criativos</strong> na Vercel (ads_create_creative)<br>
+            2️⃣ <strong>Configurar A/B test</strong> (ads_experiment_abtest_create_test)<br>
+            3️⃣ <strong>Monitorar por 72h</strong><br>
+            4️⃣ <strong>Expandir vencedor</strong> ou pausar perdedores<br><br>
+            <strong>Custo estimado:</strong> R$ 245,81 (mesmo que tá gastando agora)<br>
+            <strong>Upside esperado:</strong> +15-25% CTR, -10-15% CPM se Variante B vencer
+        </div>
+    </div>
+</body>
+</html>
